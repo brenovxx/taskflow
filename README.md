@@ -1,5 +1,7 @@
 # TaskFlow — Gerenciador de Tarefas
 
+![Dashboard do TaskFlow](screenshots/dashboard.png)
+
 O TaskFlow é uma aplicação web full stack desenvolvida para organizar tarefas e acompanhar atividades do dia a dia.
 
 O projeto foi criado como parte dos meus estudos em desenvolvimento web, com foco na integração entre frontend, backend, API REST e banco de dados.
