@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Gerenciador de tarefas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="logo">TaskFlow<span>.</span></div>
+
+            <nav>
+                <p class="nav-label">MENU</p>
+
+                <a href="#" class="nav-link active">Visão geral</a>
+                <a href="#tasks" class="nav-link">Minhas tarefas</a>
+
+                <div class="sidebar-task-list" id="sidebarTaskList"></div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span>TaskFlow</span>
+                <small>Organização pessoal</small>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <span class="breadcrumb">Workspace / Visão geral</span>
+                    <h1>Visão geral</h1>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar">B</div>
+                    <span>Meu espaço</span>
+                </div>
+            </header>
+
+            <section class="welcome">
+                <div>
+                    <h2>Bom trabalho!</h2>
+                    <p>Organize suas atividades e acompanhe seu progresso.</p>
+                </div>
+            </section>
+
+            <section class="stats">
+
+                <article class="stat-card">
+                    <span>Total de tarefas</span>
+                    <strong id="totalTasks">0</strong>
+                    <small>Todas as atividades</small>
+                </article>
+
+                <article class="stat-card">
+                    <span>Pendentes</span>
+                    <strong id="pendingTasks">0</strong>
+                    <small>Aguardando conclusão</small>
+                </article>
+
+                <article class="stat-card">
+                    <span>Concluídas</span>
+                    <strong id="completedTasks">0</strong>
+                    <small>Atividades finalizadas</small>
+                </article>
+
+            </section>
+
+            <section class="tasks-section" id="tasks">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Adicionar tarefa</h2>
+                        <p>Organize suas próximas atividades.</p>
+                    </div>
+                </div>
+
+                <form class="task-form" id="taskForm">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Digite uma nova tarefa..."
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="descriptionInput"
+                        placeholder="Descrição (opcional)"
+                    >
+
+                    <button type="submit">
+                        + Adicionar tarefa
+                    </button>
+
+                </form>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Minhas tarefas</h2>
+                        <p>Acompanhe suas atividades.</p>
+                    </div>
+                </div>
+
+                <!-- FILTROS DE TAREFAS -->
+                <div class="task-filters">
+
+                    <button class="filter-btn active" data-filter="all">
+                        Todas
+                    </button>
+
+                    <button class="filter-btn" data-filter="pending">
+                        Pendentes
+                    </button>
+
+                    <button class="filter-btn" data-filter="completed">
+                        Concluídas
+                    </button>
+
+                </div>
+
+                <!-- LISTA DE TAREFAS -->
+                <div id="taskList" class="task-list">
+                    <p class="empty-state">Carregando tarefas...</p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL DE EDIÇÃO -->
+    <div class="modal-overlay" id="editModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+                <h2>Editar tarefa</h2>
+                <button type="button" id="closeModal">×</button>
+            </div>
+
+            <form id="editForm">
+
+                <label for="editTitle">Título</label>
+                <input
+                    type="text"
+                    id="editTitle"
+                    required
+                >
+
+                <label for="editDescription">Descrição</label>
+                <textarea
+                    id="editDescription"
+                    rows="4"
+                    placeholder="Descreva sua tarefa..."
+                ></textarea>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelEdit">
+                        Cancelar
+                    </button>
+
+                    <button type="submit">
+                        Salvar alterações
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
